@@ -1,0 +1,19 @@
+name = "voxaur"
+main = "src/index.ts"
+compatibility_date = "2024-03-13"
+
+[env.production]
+routes = [
+  { pattern = "voxaur.com", zone_name = "voxaur.com" }
+]
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.ts"]
+
+[[build.upload]]
+format = "service-worker"
+
+[observability]
+enabled = true
